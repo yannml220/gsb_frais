@@ -1,0 +1,54 @@
+.header {
+    margin-top: 10px;
+}
+
+#modificationEtatDiv {
+    height: 40px;
+  
+}
+#modificationEtatDiv2 {
+    position : relative ;
+    margin-left : 10px;
+}
+
+#modificationEtatLigne {
+    font-family: sans-serif;
+    width: 50px;
+    justify-content
+   
+
+}
+
+#validationEtatDiv {
+    width: 100px;
+    display : inline-block;
+    
+}
+
+#descriptif {
+    width: 800px;
+}
+
+#listeEtats {
+    width: 100px;
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+#form {
+    position : absolute;
+    display: inline-block;
+}
+
+.item  {
+    float: left;
+}
+
+
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  
+  text-decoration: none;
+  
+}
