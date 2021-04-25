@@ -7,57 +7,43 @@
  */
 
 
-//$action =  filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ;
 $action =  filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ;
 switch ($action){
 
     case 'selectionnerFiche':
         
-        /*echo 'bonjour tout le monde';
-        $index = 0;
-        $infos = $pdo->getFichesFraisEtatVa();*/
-        
-        //var_dump($infos[0]);
-       /*$idVisiteur = $infosFiche[$index]['idVisiteur'];
-        $mois = $infosFiche[$index]['mois'];
-        $montant = $infosFiche[$index]['montant'];*/
-        //include 'vuesComptable/v_selectionnerFiche.php';
-        $lesVisiteurs = $pdo->getLesVisiteursDisponibles();
-            $lesCles = array_keys($lesVisiteurs);
+  
+            $lesVisiteurs = $pdo->getLesVisiteursDisponibles();
+            /*$lesCles = array_keys($lesVisiteurs);
             $visiteurToSelect = $lesCles[26];
-            $visiteurSelectionne = $_POST['lastVisiteur'];
+            //$visiteurSelectionne = $_POST['lastVisiteur'];
             $visiteurId = $pdo->getLeVisiteurId($visiteurSelectionne);
-            $leId = $visiteurId[0]['id'];
+            $leId = $visiteurId[0]['id'];*/
 
-
-                //var_dump($visiteurId);
-            //var_dump($leId);
-            //var_dump($visiteurSelectionne);
+            /*
             $lesMois = $pdo->getLesMoisDisponiblesFicheValidee($leId);
             $formAction = "index.php?uc=suivrePaiement&action=accederFicheFraisValidee&lastVisiteurId=$leId";
             $ajaxformAction = "index.php?uc=suivrePaiement&action=accederFicheFraisValidee";
             if(empty($lesMois)){
-                //$formAction = "#";
+               
                 $disabled = "true";
                 echo 'les mois sont vides';
             }
             else
             {
-                //$formAction = "index.php?uc=validerFicheFrais&action=accederFicheFrais&lastVisiteurId=$leId";
+               
                 $disabled = "false";
             }
 
 
 
-            //var_dump($lesMois);  //si il existe des mois pour le visiteur selectionné on les affiches à partir du dernier
-
 
             if(!($lesMois == null)){
                 $lesClesMois = array_keys($lesMois);
                 $moisASelectionner = $lesClesMois[0];
-             }
+             }*/
             include 'vuesComptable/v_selectionnerFicheFraisValidee.php';
-            $loopAgain = false ;
+          
             break;
     case 'accederFicheFraisValidee':  
         $lastVisiteurId = filter_input(INPUT_GET, 'lastVisiteurId', FILTER_SANITIZE_STRING);
@@ -65,7 +51,7 @@ switch ($action){
             $nom = $pdo->getNameVisiteur($lastVisiteurId);
             $prenom = $pdo->getFirstNameVisiteur($lastVisiteurId);
             var_dump($nom);
-            //$leMois = filter_input(INPUT_GET, 'lastMois', FILTER_SANITIZE_STRING);
+        
 
             $leMois = $_GET['lstMois'];
             
@@ -81,7 +67,7 @@ switch ($action){
             $montantValide = $lesInfosFicheFrais['montantValide'];
             $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
             $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
-            //var_dump($lesInfosFicheFrais);
+            
             var_dump($lastVisiteurId);
             var_dump($leMois);
             var_dump($lesFraisForfait);
@@ -89,14 +75,14 @@ switch ($action){
             $optionsEtats[] = array();
             $optionsEtats = array('PA','RB');
             
-            //var_dump($listeDesEtats);
+           
             $lesClesEtat = array_keys($listeDesEtats);
             $etatPreSelectionne = $lesClesEtat[1];
 
             $result[] = array();
             
             include 'vuesComptable/v_detailFicheFraisValidee.php';
-            //require 'vuesComptable/v_listeFraisHorsForfaitComptable.php';
+           
             $loopAgain = false ;
             break;
         
@@ -127,7 +113,7 @@ switch ($action){
             //$pdo->majEtatFicheFrais($lastVisiteurId, $lemois, $etat); //ajouter une condition pour pouvoir ne modif que le mois et pas l'état si la fiche était déjà validée
             //$pdo->majFraisForfait($lastVisiteurId, $lemois, $lesFrais);
             break;
-            //$idVisiteur, $mois, $etat
+            
 
              
     

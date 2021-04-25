@@ -135,20 +135,14 @@
                     foreach ($lesVisiteurs as $unVisiteur) {
                         $visiteur = $unVisiteur['nom'];
                 
-                        if ($visiteur == $visiteurSelectionne) {
-                            ?>
-                            <option  id="optionMois" selected value="<?php echo $visiteur ?>">
-                                <?php echo $visiteur ?> </option>
-                            <?php
-                        } else {
-                            ?>
+                                ?>
                             <option  value="<?php echo $visiteur ?>">
                      
                                 
                                 <?php echo $visiteur ?> </option>
                             <?php 
                         }
-                    }
+                    
                     ?>    
 
                 </select>

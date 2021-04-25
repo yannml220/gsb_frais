@@ -128,22 +128,16 @@
                     <option selected="" disabled="">selection visiteur</option>
                     <?php 
                     foreach ($lesVisiteurs as $unVisiteur) {
-                        $visiteur = $unVisiteur['nom'];
+                        $visiteur = $unVisiteur['nom'];?>
                 
-                        if ($visiteur == $visiteurSelectionne) {
-                            ?>
-                    <option id="targetedOption" selected value="<?php echo $visiteur ?>">
-                                <?php echo $visiteur ?> </option>
-                            <?php
-                        } else {
-                            ?>
+
                             <option id="targetedOption" value="<?php echo $visiteur ?>">
                      
                                 
                                 <?php echo $visiteur ?> </option>
                             <?php 
                         }
-                    }
+                    
                     ?>    
 
                 </select>

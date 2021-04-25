@@ -3,15 +3,58 @@
 
 ?>
 
-
-<head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-    function show(mo){
-        console.log(mo);
-    }
+        
+       $(document).ready(function(){
+            
+             
+            
+             $("#formModification").on('submit',function(event){
+                event.preventDefault();
+                var form = $(this);
+                var url = "controleursComptable/c_ajaxHandlerModifierInfos.php?lastVisiteurId=<?php echo $lastVisiteurId ?>&mois=<?php echo $leMois ?>";
+                var method = form.attr('method');
+                var data = {};
+                
+                $.ajax({
+                    url : url,
+                    method : method ,
+                    data 
+                
+                  
+              })
+                    .done(function(infos){
+                    console.log(infos);
+                   /* mois = JSON.parse(mois);
+                    //console.log(mois);
+                    listeMois = mois['mois'];
+                    id = mois['id'];
+                    console.log(id);
+                    console.log(listeMois);
+                    
+                    $("#lstMois").empty();
+                    $("#lstMois").append('<option selected="" disabled="">les mois disponibles pour  '+lastVisiteurId+ '</option>')
+                    listeMois.forEach(function(lemois){
+                        //let leFameuxMois = lemois
+                        //console.log(lemois['mois'])
+                        $("#lstMois").append('<option>'+lemois['mois']+'</option>')*/
+                        
+                    });
+                });    
+             
+                
+       
+        });
+        
+        
 </script>
-</head>
+
+
+
+
+
+
 <h3>Page des détails de la fiche de frais de <?php echo $nom[0]['nom'].' '.$prenom[0]['prenom']  ?></h3>
 
 <hr>
@@ -27,8 +70,8 @@
 <div class="panel panel-info">
     
     <div class="panel-heading">Eléments forfaitisés</div>
-    <form action="index.php?uc=validerFicheFrais&action=modifierEtatFiche&mois=<?php echo $leMois ?>&etat=VA&lastVisiteurId=<?php echo $lastVisiteurId ?>" method="post" id="FORMID">
-       
+    <form   action="index.php?uc=validerFicheFrais&action=modifierEtatFiche&mois=<?php echo $leMois ?>&etat=VA&lastVisiteurId=<?php echo $lastVisiteurId ?>" method="post" id="formModification">
+            
     
         <table class="table table-bordered table-responsive">
     
@@ -52,7 +95,7 @@
                 $quantite = $unFraisForfait['quantite']; ?>
         
         
-            <td class="qteForfait"><input onkeyup="show(this.value)" type="text" name="<?php echo $lesFraisForfait[$index]['idfrais'] ?>" value="<?php echo $quantite ?> "></td>
+            <td class="qteForfait"><input  type="text" name="<?php echo $lesFraisForfait[$index]['idfrais'] ?>" value="<?php echo $quantite ?> "></td>
             
                 <?php
                
@@ -90,7 +133,7 @@
 
           
        </span>  
-        <button type="submit" form="FORMID" >valider/actualiser</button>
+        <button type="submit" form="formModification" >valider/actualiser</button>
     </form> 
        
  

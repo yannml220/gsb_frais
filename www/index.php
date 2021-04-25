@@ -40,8 +40,7 @@ if ($uc && !$estConnecte) {
 
 
 if(isset($_SESSION['idVisiteur'])) {
-    
-
+   $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
     switch ($uc) {
     case 'connexion':
         include 'controleurs/c_connexion.php';
@@ -79,10 +78,7 @@ else
         break;
     case 'suivrePaiement':
         include 'controleursComptable/c_suivrePaiementFicheFrais.php';
- 
-   
-        
-    }
+        }
 }
 echo "$uc";
 
