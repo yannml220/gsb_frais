@@ -18,7 +18,7 @@ $idVisiteur = $_SESSION['idVisiteur'];
 $mois = getMois(date('d/m/Y'));
 $numAnnee = substr($mois, 0, 4);
 $numMois = substr($mois, 4, 2);
-$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);   //correspond à l' action passé dans la variable action via les différents form de la vue gererFrais
+$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 switch ($action) {
 case 'saisirFrais':
     if ($pdo->estPremierFraisMois($idVisiteur, $mois)) {
@@ -27,7 +27,6 @@ case 'saisirFrais':
     break;
 case 'validerMajFraisForfait':
     $lesFrais = filter_input(INPUT_POST, 'lesFrais', FILTER_DEFAULT, FILTER_FORCE_ARRAY);
-    var_dump($lesFrais);
     if (lesQteFraisValides($lesFrais)) {
         $pdo->majFraisForfait($idVisiteur, $mois, $lesFrais);
     } else {
@@ -59,5 +58,5 @@ case 'supprimerFrais':
 }
 $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $mois);
 $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $mois);
-require 'vues/v_listeFraisForfait.php';
+include 'vues/v_listeFraisForfait.php';
 require 'vues/v_listeFraisHorsForfait.php';

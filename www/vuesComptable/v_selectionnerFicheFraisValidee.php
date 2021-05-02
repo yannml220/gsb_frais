@@ -32,21 +32,26 @@
                     method : method,
                     data : 'nom='+ lastVisiteurId
                    
-                }).done(function(mois){
+                }).done(function(result){
                     
-                    mois = JSON.parse(mois);
+                    result = JSON.parse(result);
                     //console.log(mois);
-                    listeMois = mois['mois'];
-                    id = mois['id'];
+                    listeMois = result['mois'];
+                    id = result['id'];
                     console.log(id);
                     console.log(listeMois);
                     
                     $("#lstMois").empty();
-                    $("#lstMois").append('<option selected="" disabled="">les mois disponibles pour  '+lastVisiteurId+ '</option>')
+                    //$("#lstMois").append('<option selected="" disabled="">les mois disponibles pour  '+lastVisiteurId+ '</option>')
+                    console.log(listeMois[0]);
+                    console.log(listeMois[1]);
+                    //var premierMois = listeMois[1];
+                    $("#lstMois").append('<option selected="" disabled="">'+listeMois[0]['mois']+'</option>')
                     listeMois.forEach(function(lemois){
-                        //let leFameuxMois = lemois
-                        //console.log(lemois['mois'])
-                        $("#lstMois").append('<option>'+lemois['mois']+'</option>')
+                        
+                         
+                        
+                        $("#lstMois").append('<option>'+lemois['mois']+'</option>');
                         
                     });
                 });    
@@ -163,26 +168,6 @@
                 <select id="lstMois" name="lstMois" class="form-control">
                  <option selected="" disabled="">selection mois</option>
  
-                    <?php
-                    
-   
-                    foreach ($lesMois as $unMois) {
-                        $mois = $unMois['mois'];
-                        $numAnnee = $unMois['numAnnee'];
-                        $numMois = $unMois['numMois'];
-                        if ($mois == $moisASelectionner) {
-                            ?>
-                            <option selected value="<?php echo $mois ?>">
-                                <?php echo $numMois . '/' . $numAnnee ?> </option>
-                            <?php
-                        } else {
-                            ?>
-                            <option value="<?php echo $mois ?>">
-                                <?php echo $numMois . '/' . $numAnnee ?> </option>
-                            <?php
-                        }
-                    }
-                    ?>    
 
                 </select>
             

@@ -21,7 +21,5 @@ require '../includes/class.pdogsb.inc.php';
             $result['mois'] = $lesMois;
             $result['id'] = $id;
             print_r(json_encode($result));
-            //print_r(json_encode('id=>'+ $id));
-            //echo ('id=>'+ $id);
-            //print_r($lesMois);
+       
         }

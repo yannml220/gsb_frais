@@ -9,7 +9,7 @@
 <link type="text/css" rel="stylesheet" href="styles/style.css">
 
 <hr>
-<div class="row"  id ="descriptif">
+
     <div class="panel panel-info">
         <div class="panel-heading">Descriptif des éléments hors forfait</div>
         <table class="table table-bordered table-responsive">
@@ -41,5 +41,9 @@
             </tbody>  
         </table>
     </div>
-</div>
+
+
+
+
+
 

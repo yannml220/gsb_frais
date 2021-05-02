@@ -3,26 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_selectionnerFicheFrais.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_deconnexion.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_entete.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_selectionnerFicheFrais.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxHandlerModifierInfos.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_suivrePaiementFicheFrais.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_listeFraisForfait.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_validerFicheFrais.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleurs/c_connexion.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/styles/bootstrap/bootstrap.css</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/includes/fct.inc.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleurs/c_gererFrais.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_entete.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleurs/c_accueil.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/styles/style.css</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/includes/class.pdogsb.inc.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_selectionnerFiche.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_listeFraisHorsForfaitComptable.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_connexion.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxhandler.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_pied.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxHandlerOne.php</file>
+            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_detailFicheFrais.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_detailFicheFraisValidee.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_accueil.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_detailFicheFrais.php</file>
             <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_selectionnerFicheFraisValidee.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxhandler.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_selectionnerFiche.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxHandlerOne.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_connexion.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vues/v_pied.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/index.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_ajaxHandlerModifierInfos.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/styles/style.css</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/controleursComptable/c_validerFicheFrais.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/vuesComptable/v_listeFraisHorsForfaitComptable.php</file>
-            <file>file:/C:/wamp64/www/GSB_AppliMVC2/www/includes/class.pdogsb.inc.php</file>
         </group>
     </open-files>
 </project-private>

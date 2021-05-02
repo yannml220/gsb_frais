@@ -14,43 +14,16 @@ switch ($action){
         
   
             $lesVisiteurs = $pdo->getLesVisiteursDisponibles();
-            /*$lesCles = array_keys($lesVisiteurs);
-            $visiteurToSelect = $lesCles[26];
-            //$visiteurSelectionne = $_POST['lastVisiteur'];
-            $visiteurId = $pdo->getLeVisiteurId($visiteurSelectionne);
-            $leId = $visiteurId[0]['id'];*/
 
-            /*
-            $lesMois = $pdo->getLesMoisDisponiblesFicheValidee($leId);
-            $formAction = "index.php?uc=suivrePaiement&action=accederFicheFraisValidee&lastVisiteurId=$leId";
-            $ajaxformAction = "index.php?uc=suivrePaiement&action=accederFicheFraisValidee";
-            if(empty($lesMois)){
-               
-                $disabled = "true";
-                echo 'les mois sont vides';
-            }
-            else
-            {
-               
-                $disabled = "false";
-            }
-
-
-
-
-            if(!($lesMois == null)){
-                $lesClesMois = array_keys($lesMois);
-                $moisASelectionner = $lesClesMois[0];
-             }*/
             include 'vuesComptable/v_selectionnerFicheFraisValidee.php';
           
             break;
     case 'accederFicheFraisValidee':  
         $lastVisiteurId = filter_input(INPUT_GET, 'lastVisiteurId', FILTER_SANITIZE_STRING);
-        var_dump($lastVisiteurId);
+        //var_dump($lastVisiteurId);
             $nom = $pdo->getNameVisiteur($lastVisiteurId);
             $prenom = $pdo->getFirstNameVisiteur($lastVisiteurId);
-            var_dump($nom);
+           // var_dump($nom);
         
 
             $leMois = $_GET['lstMois'];
@@ -59,7 +32,7 @@ switch ($action){
             
             $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($lastVisiteurId, $leMois);
             $lesFraisForfait = $pdo->getLesFraisForfait($lastVisiteurId, $leMois);
-            var_dump($lesFraisForfait);
+            //var_dump($lesFraisForfait);
             $lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($lastVisiteurId, $leMois);
             $numAnnee = substr($leMois, 0, 4);
             $numMois = substr($leMois, 4, 2);
@@ -68,9 +41,9 @@ switch ($action){
             $nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
             $dateModif = dateAnglaisVersFrancais($lesInfosFicheFrais['dateModif']);
             
-            var_dump($lastVisiteurId);
-            var_dump($leMois);
-            var_dump($lesFraisForfait);
+            //var_dump($lastVisiteurId);
+            //var_dump($leMois);
+            //var_dump($lesFraisForfait);
             $listeDesEtats = $pdo->getListeEtats();
             $optionsEtats[] = array();
             $optionsEtats = array('PA','RB');
@@ -82,6 +55,7 @@ switch ($action){
             $result[] = array();
             
             include 'vuesComptable/v_detailFicheFraisValidee.php';
+            include 'vuesComptable/v_listeFraisHorsForfaitComptable.php';
            
             $loopAgain = false ;
             break;
@@ -95,15 +69,15 @@ switch ($action){
                 //$pdo->majFraisForfait($lastVisiteurId, $lemois, $lesFrais);//modifier les lignes de frais 
                // $lemontant = $pdo->calculeMontantTotal($lastVisiteurId,$lemois);//modifier le montant
             $pdo->majEtatFicheFrais($lastVisiteurId, $lemois, $etat); //met à jour l'état de la fiche 
-            var_dump($lemontant);
+            //var_dump($lemontant);
                 //$pdo->ComptableMajFicheFrais($lastVisiteurId);
         
-            
+            /*
             var_dump($_POST);
             var_dump($etat);
             var_dump($lemois);
             var_dump($lastVisiteurId);
-            var_dump($_POST);
+            var_dump($_POST);*/
             
             
             $lesFrais = $_POST;

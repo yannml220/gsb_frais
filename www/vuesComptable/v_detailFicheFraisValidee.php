@@ -11,26 +11,6 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-        
-        $(document).ready(function(){
-        
-        $("#FORMID").on('submit',function(event){
-            
-            var form = $(this);
-            var url = form.attr('action');
-            var method = form.attr('method');
-            var data = {
-                etat : ''
-            };
-            let etat = $('option').filter(":selected").val();
-            console.log(etat);
-            //event.preventDefault();
-            
-        });
-    });
-</script>
 
 
 <h3>Page des détails de la fiche de frais de <?php echo $nom[0]['nom'].' '.$prenom[0]['prenom']  ?></h3>
@@ -119,31 +99,4 @@
  
 
 
-<div class="panel panel-info">
-    <div class="panel-heading">Descriptif des éléments hors forfait - 
-        <?php echo $nbJustificatifs ?> justificatifs reçus</div>
-    
-    <table class="table table-bordered table-responsive">
-        <tr>
-            <th class="date">Date</th>
-            <th class="libelle">Libellé</th>
-            <th class='montant'>Montant</th>
-            <th>Justificatifs</th>
-        </tr>
-        <?php
-        foreach ($lesFraisHorsForfait as $unFraisHorsForfait) {
-            $date = $unFraisHorsForfait['date'];
-            $libelle = htmlspecialchars($unFraisHorsForfait['libelle']);
-            $montant = $unFraisHorsForfait['montant']; ?>
-            <tr>
-                <td><?php echo $date ?></td>
-                <td><?php echo $libelle ?></td>
-                <td><input id="inputEtat" type="text" value="<?php echo $montant ?>"><button id="lebouton">valider</button></td>
-            </tr>
-            <?php
-        }
-        ?>
-    </table>
-   
-</div>
 <!-- <script src="script/script1.js"></script> -->
